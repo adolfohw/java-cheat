@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/index.css" />
+		<link rel="stylesheet" href="styles/prism.css" />
+		<script src="prism.js"></script>
+		<title>Java Cheat Sheet</title>
+	</head>
+	<body>
+		<header>
+			<h1>☕ Java is <em>definitely</em> not spooky</h1>
+			<p>I promise 🙂</p>
+		</header>
+		<main>
+			<section>
+				<h2 id="basics">The Basics</h2>
+
+				<section>
+					<h3>About</h3>
+					<p>
+						Java is a garbage-collected, object-oriented,
+						C-like&trade; language that compiles into bytecode,
+						which is run on the
+						<abbr title="Java Virtual Machine">JVM</abbr>. This
+						means that it is all about classes, and that Java apps
+						are very portable. Allegedly.
+					</p>
+					<p>
+						The <abbr title="Java Development Kit">JDK</abbr> can be
+						downloaded from
+						<a
+							href="https://www.oracle.com/java/technologies/javase-downloads.html"
+							target="_blank"
+							rel="noopener noreferrer"
+							>Oracle's website</a
+						>.
+					</p>
+				</section>
+
+				<section>
+					<h3>App hierarchy</h3>
+					<p>
+						<code>
+							<span class="token keyword">package</span> &gt;
+							<span class="token keyword">class</span> &gt;
+							<span class="descriptor">method</span></code
+						>
+					</p>
+				</section>
+
+				<section>
+					<h3>Hello, world! 👋</h3>
+					<pre><code class="language-java">
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello, world!");
+	}
+}
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<h2>Tooling</h2>
+
+				<section>
+					<h3>🐘 Gradle</h3>
+					<p>
+						Gradle is a common build tool in the Java world, that
+						can be downloaded from
+						<a
+							href="https://gradle.org/install/"
+							target="_blank"
+							rel="noopener noreferrer"
+							>its website</a
+						>. To start a new Java project:
+					</p>
+					<ul class="shell">
+						<li><span class="cmd">mkdir</span> java-IS-cool</li>
+						<li><span class="cmd">cd</span> java-IS-cool</li>
+						<li><span class="cmd">gradle</span> init</li>
+					</ul>
+					<p>
+						At this point, it's
+						<a
+							href="https://guides.gradle.org/building-java-libraries/#assemble_the_library_jar"
+							target="_blank"
+							rel="noopener noreferrer"
+							>recommended</a
+						>
+						to use the <code>gradlew</code> scripts generated in the
+						project's root. These are some useful tasks:
+					</p>
+					<ul class="shell">
+						<li>
+							<span class="cmd">./gradlew</span> build
+							<span class="comment">builds stuff!</span>
+						</li>
+						<li><span class="cmd">./gradlew</span> jar</li>
+						<li><span class="cmd">./gradlew</span> run</li>
+						<li><span class="cmd">./gradlew</span> test</li>
+						<li><span class="cmd">./gradlew</span> tasks</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h2>Syntax</h2>
+
+				<section>
+					<h3>Reserved words</h3>
+					<code class="reserved-words">
+						<table>
+							<caption>
+								Modifiers
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td>static</td>
+									<td>abstract</td>
+									<td>final</td>
+								</tr>
+								<tr>
+									<td>private</td>
+									<td>protected</td>
+									<td>public</td>
+								</tr>
+								<tr>
+									<td>synchronized</td>
+									<td>volatile</td>
+									<td>native</td>
+								</tr>
+								<tr>
+									<td>transient</td>
+									<td>strictfp</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>
+								Flow Control
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td>for</td>
+									<td>do</td>
+									<td>while</td>
+								</tr>
+								<tr>
+									<td>switch</td>
+									<td>case</td>
+									<td>default</td>
+								</tr>
+								<tr>
+									<td>continue</td>
+									<td>break</td>
+									<td>return</td>
+								</tr>
+								<tr>
+									<td>if</td>
+									<td>else</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>
+								Structures
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td>class</td>
+									<td>implements</td>
+									<td>extends</td>
+								</tr>
+								<tr>
+									<td>package</td>
+									<td>interface</td>
+									<td>enum</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>
+								Exception Handling
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td>try</td>
+									<td>catch</td>
+									<td>finally</td>
+								</tr>
+								<tr>
+									<td>throw</td>
+									<td>throws</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>
+								Primitives
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td>boolean</td>
+									<td>byte</td>
+									<td>char</td>
+								</tr>
+								<tr>
+									<td>double</td>
+									<td>float</td>
+									<td>long</td>
+								</tr>
+								<tr>
+									<td>short</td>
+									<td>void</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table>
+							<caption>
+								Other
+							</caption>
+							<tbody class="token keyword">
+								<tr>
+									<td class="token boolean">true</td>
+									<td class="token boolean">false</td>
+									<td>null</td>
+								</tr>
+								<tr>
+									<td>new</td>
+									<td>super</td>
+									<td>this</td>
+								</tr>
+								<tr>
+									<td>assert</td>
+									<td>import</td>
+									<td>instanceof</td>
+								</tr>
+								<tr>
+									<td>var</td>
+									<td class="unused">
+										const<sup class="unused">*</sup>
+									</td>
+									<td class="unused">
+										goto<sup class="unused">*</sup>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td class="footer-note">
+										<span class="unused">*</span>
+										These keywords are not used,<br />
+										but are reserved nonetheless.
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</code>
+				</section>
+			</section>
+		</main>
+	</body>
+</html>

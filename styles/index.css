@@ -1,0 +1,178 @@
+@import 'defaults.css';
+
+:root {
+	--java-orange: #ed8b00;
+	--java-blue: #007396;
+}
+
+* {
+	margin: 10px 0;
+}
+
+*::selection {
+	color: white;
+	background: var(--java-blue);
+}
+
+body {
+	max-width: 80ch;
+}
+
+section {
+	margin: 3em 0;
+}
+
+abbr[title] {
+	color: var(--java-blue);
+	cursor: help;
+	text-decoration: none;
+}
+
+abbr[title]::after {
+	content: '💬';
+	bottom: 10px;
+	font-size: x-small;
+	position: relative;
+}
+
+a {
+	color: var(--java-orange);
+	text-decoration: 2px dotted underline;
+	text-underline-offset: 3px;
+}
+
+a[target='_blank']::after {
+	content: '🛬';
+}
+
+em {
+	text-decoration: underline;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1 + p {
+	text-align: center;
+}
+
+h2 {
+	border-bottom: 1px solid lightgray;
+}
+
+h2::before {
+	content: '#';
+	color: var(--java-orange);
+	margin-right: 0.5ch;
+}
+
+h3 {
+	text-decoration: dashed underline var(--java-blue);
+	text-underline-offset: 3px;
+}
+
+.descriptor,
+.regex {
+	color: gray;
+}
+
+.descriptor::before,
+.descriptor::after {
+	color: lightgray;
+}
+
+.descriptor::before {
+	content: '[';
+}
+
+.descriptor::after {
+	content: ']';
+}
+
+.shell {
+	font-size: 14px;
+	font-family: Fira Code, monospace;
+	background-image: radial-gradient(
+			circle at 0.8em 0.8em,
+			#ff605c 7px,
+			transparent 7px
+		),
+		radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 7px),
+		radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 7px),
+		linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
+	border-radius: 7px;
+	box-shadow: 0px 3px 10px #8888;
+	color: whitesmoke;
+	margin: 2em;
+	padding: 1.6em 1.5ch 1.5ch;
+}
+
+.shell ::selection {
+	color: #333;
+	background-color: whitesmoke;
+}
+
+.shell .cmd {
+	color: yellow;
+}
+
+.shell .comment {
+	color: lightgreen;
+}
+
+.shell .comment::before {
+	content: '# ';
+}
+
+.shell li:first-child {
+	margin-top: 1.5ch;
+}
+
+.shell li {
+	margin: 7px 0 0;
+	list-style: none;
+}
+
+.shell li::before {
+	content: ' > ';
+	font-weight: bold;
+	color: pink;
+}
+
+.reserved-words {
+	align-items: start;
+	display: grid;
+	gap: 1em 2em;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+.reserved-words table {
+	border: 1px solid lightgray;
+}
+
+.reserved-words table * {
+	margin: 0.25em 0;
+}
+
+.reserved-words tr {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reserved-words .unused {
+	color: var(--java-orange);
+}
+
+.reserved-words td.unused {
+	color: gray;
+}
+
+.reserved-words .footer-note {
+	color: gray;
+	font-size: small;
+	grid-column: 1/4;
+	text-align: left;
+	padding-left: 1em;
+}
