@@ -34,6 +34,19 @@ green     #859900
  * Modified for Java Cheat Sheet
  */
 
+pre[class*='language-'] {
+	border-radius: 7px;
+	box-shadow: inset 0 0 3ch #fdf6e3;
+	margin: 2em;
+	padding: 1.5ch;
+}
+
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	color: currentColor;
+	background-color: #eee8d5;
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
 	line-height: 1.5;
