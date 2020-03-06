@@ -22,7 +22,7 @@
 					<p>
 						Java is a garbage-collected, object-oriented,
 						C-like&trade; language that compiles into bytecode,
-						which is run on the
+						which is then run on the
 						<abbr title="Java Virtual Machine">JVM</abbr>. This
 						means that it is all about classes, and that Java apps
 						are very portable. Allegedly.
@@ -52,13 +52,17 @@
 
 				<section>
 					<h3>Hello, world! 👋</h3>
-					<pre><code class="language-java">
+					<pre><code class="language-java">// in HelloWorld.java
 public class HelloWorld {
 	public static void main(String[] args) {
 		System.out.println("Hello, world!");
 	}
-}
-					</code></pre>
+}</code></pre>
+					<p>And to run it:</p>
+					<ul class="shell">
+						<li><span class="cmd">javac</span> HelloWorld</li>
+						<li><span class="cmd">java</span> HelloWorld</li>
+					</ul>
 				</section>
 			</section>
 			<section>
@@ -67,8 +71,8 @@ public class HelloWorld {
 				<section>
 					<h3>🐘 Gradle</h3>
 					<p>
-						Gradle is a common build tool in the Java world, that
-						can be downloaded from
+						Gradle is a common build tool in the Java world, and can
+						be downloaded from
 						<a
 							href="https://gradle.org/install/"
 							target="_blank"
@@ -76,7 +80,7 @@ public class HelloWorld {
 							>its website</a
 						>. To start a new Java project:
 					</p>
-					<ul class="shell">
+					<ul class="shell" directory="~/dev">
 						<li><span class="cmd">mkdir</span> java-IS-cool</li>
 						<li><span class="cmd">cd</span> java-IS-cool</li>
 						<li><span class="cmd">gradle</span> init</li>
@@ -92,15 +96,39 @@ public class HelloWorld {
 						to use the <code>gradlew</code> scripts generated in the
 						project's root. These are some useful tasks:
 					</p>
-					<ul class="shell">
+					<ul class="shell" directory="~/dev/java-IS-cool">
 						<li>
 							<span class="cmd">./gradlew</span> build
-							<span class="comment">builds stuff!</span>
+							<span class="comment"
+								>&nbsp;&nbsp;# builds your app and runs
+								tests</span
+							>
 						</li>
-						<li><span class="cmd">./gradlew</span> jar</li>
-						<li><span class="cmd">./gradlew</span> run</li>
-						<li><span class="cmd">./gradlew</span> test</li>
-						<li><span class="cmd">./gradlew</span> tasks</li>
+						<li>
+							<span class="cmd">./gradlew</span> jar
+							<span class="comment"
+								>&nbsp;&nbsp;&nbsp;&nbsp;# makes a jar archive
+								of the project</span
+							>
+						</li>
+						<li>
+							<span class="cmd">./gradlew</span> run
+							<span class="comment"
+								>&nbsp;&nbsp;&nbsp;&nbsp;# runs your app</span
+							>
+						</li>
+						<li>
+							<span class="cmd">./gradlew</span> test
+							<span class="comment"
+								>&nbsp;&nbsp;&nbsp;# runs unit tests</span
+							>
+						</li>
+						<li>
+							<span class="cmd">./gradlew</span> tasks
+							<span class="comment"
+								>&nbsp;&nbsp;# shows all tasks!</span
+							>
+						</li>
 					</ul>
 				</section>
 			</section>

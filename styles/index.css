@@ -102,10 +102,26 @@ h3 {
 		radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 7px),
 		linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
 	border-radius: 7px;
-	box-shadow: 0px 3px 10px #8888;
+	box-shadow: 0 3px 10px #8888;
 	color: whitesmoke;
 	margin: 2em;
 	padding: 1.6em 1.5ch 1.5ch;
+}
+
+.shell::before {
+	color: #444;
+	display: block;
+	height: 0;
+	transform: translateY(-1.6em);
+	text-align: center;
+}
+
+.shell[directory]::before {
+	content: attr(directory);
+}
+
+.shell[directory='none']::before {
+	content: none;
 }
 
 .shell ::selection {
@@ -119,10 +135,6 @@ h3 {
 
 .shell .comment {
 	color: lightgreen;
-}
-
-.shell .comment::before {
-	content: '# ';
 }
 
 .shell li:first-child {
