@@ -152,6 +152,18 @@ h3 {
 	color: pink;
 }
 
+.note {
+	color: var(--java-orange);
+}
+
+.footer-note {
+	color: gray;
+	font-size: small;
+	grid-column: 1/4;
+	text-align: left;
+	padding-left: 1em;
+}
+
 .reserved-words {
 	align-items: start;
 	display: grid;
@@ -173,18 +185,10 @@ h3 {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
-.reserved-words .unused {
-	color: var(--java-orange);
-}
-
 .reserved-words td.unused {
 	color: gray;
 }
 
-.reserved-words .footer-note {
-	color: gray;
-	font-size: small;
-	grid-column: 1/4;
-	text-align: left;
-	padding-left: 1em;
+.primitives td:not(:last-child) {
+	font-family: Fira Code, monospace;
 }

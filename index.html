@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="styles/index.css" />
 		<link rel="stylesheet" href="styles/prism.css" />
 		<script src="prism.js"></script>
-		<title>Java Cheat Sheet</title>
+		<title>☕ Java Cheat Sheet</title>
 	</head>
 	<body>
 		<header>
@@ -272,17 +272,17 @@ public class HelloWorld {
 								<tr>
 									<td>var</td>
 									<td class="unused">
-										const<sup class="unused">*</sup>
+										const<sup class="note">*</sup>
 									</td>
 									<td class="unused">
-										goto<sup class="unused">*</sup>
+										goto<sup class="note">*</sup>
 									</td>
 								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
 									<td class="footer-note">
-										<span class="unused">*</span>
+										<span class="note">*</span>
 										These keywords are not used,<br />
 										but are reserved nonetheless.
 									</td>
@@ -291,6 +291,118 @@ public class HelloWorld {
 						</table>
 					</code>
 				</section>
+
+				<section>
+					<h3>Primitives</h3>
+
+					<table class="primitives">
+						<thead>
+							<tr>
+								<th>Type</th>
+								<th>Default value</th>
+								<th>What is it?<sup class="note">*</sup></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="token keyword">byte</td>
+								<td class="token number">0</td>
+								<td>8-bits signed integer</td>
+							</tr>
+							<tr>
+								<td class="token keyword">short</td>
+								<td class="token number">0</td>
+								<td>16-bits signed integer</td>
+							</tr>
+							<tr>
+								<td class="token keyword">int</td>
+								<td class="token number">0</td>
+								<td>32-bits signed integer</td>
+							</tr>
+							<tr>
+								<td class="token keyword">long</td>
+								<td class="token number">0L</td>
+								<td>64-bits signed integer</td>
+							</tr>
+							<tr>
+								<td class="token keyword">float</td>
+								<td class="token number">0.0f</td>
+								<td>32-bits (single-precision) float</td>
+							</tr>
+							<tr>
+								<td class="token keyword">double</td>
+								<td class="token number">0.0d</td>
+								<td>64-bits (double-precision) float</td>
+							</tr>
+							<tr>
+								<td class="token keyword">char</td>
+								<td class="token char">'\u0000'</td>
+								<td>
+									16-bits
+									<abbr
+										title="Basic Multilingual Plane 16-bit Unicode Transformation Format"
+										>BMP UTF-16</abbr
+									>
+									code point
+								</td>
+							</tr>
+							<tr>
+								<td class="token keyword">boolean</td>
+								<td class="token boolean">false</td>
+								<td>1-bit boolean</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td class="footer-note" colspan="3">
+									<span class="note">*</span> The size listed
+									here does not necessarily reflect on the
+									actual size of primitive values or their
+									containers, since the JVM packs them at its
+									own disclosure.
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</section>
+
+				<section>
+					<h3>Operators</h3>
+				</section>
+
+				<section>
+					<h3>Modifiers</h3>
+				</section>
+
+				<section>
+					<h3>Variables & fields</h3>
+				</section>
+
+				<section>
+					<h3>Flow control</h3>
+				</section>
+
+				<section>
+					<h3>Interfaces</h3>
+				</section>
+
+				<section>
+					<h3>Classes</h3>
+				</section>
+
+				<section>
+					<h3>Methods</h3>
+				</section>
+
+				<section>
+					<h3>Enumerations</h3>
+				</section>
+			</section>
+			<section>
+				<h2>Documentation</h2>
+			</section>
+			<section>
+				<h2>Tests</h2>
 			</section>
 		</main>
 	</body>
