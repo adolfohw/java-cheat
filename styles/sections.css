@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .reserved-words {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -49,8 +50,14 @@
   border-top: var(--light-border);
 }
 
-.control-flow {
+.methods ul {
   list-style: none;
+  margin-top: 20px;
+}
+
+.methods ul li::before {
+  content: '👉';
+  margin-right: 1ch;
 }
 
 .variables {
@@ -59,6 +66,10 @@
 }
 
 .variables ul {
+  list-style: none;
+}
+
+.control-flow {
   list-style: none;
 }
 /*# sourceMappingURL=sections.css.map */

@@ -693,26 +693,44 @@ public class HelloWorld {
 				<section>
 					<h3 id="methods">Methods</h3>
 
-					<code class="methods">
-						<span class="regex many">modifier</span>
-						<span class="regex or"
-							><span class="token class-name">T</span
-							><span class="token keyword">void</span></span
-						>
-						<span class="token function">verbNoun</span
-						><span class="token punctuation">(</span
-						><span class="regex many" separator=","
-							><span class="token class-name">T</span> arg</span
-						><span class="token punctuation">)</span>
-						<span class="regex optional"
-							><span class="token keyword">throws</span>
-							<span class="regex at-least-one" separator=","
-								><span class="token class-name"
-									>Exception</span
-								></span
-							></span
-						>
-					</code>
+					<div class="methods">
+						<code>
+							<span class="regex many">modifier</span>
+							<span class="regex or"
+								><span class="token class-name">T</span
+								><span class="token keyword">void</span></span
+							>
+							<span class="token function">verbNoun</span
+							><span class="token punctuation">(</span
+							><span class="regex many" separator=","
+								><span class="token class-name">T</span>
+								arg</span
+							>
+							<span class="regex optional"
+								><code class="language-java">T...</code>
+								vararg</span
+							><span class="token punctuation">)</span>
+							<div style="text-indent: 4ch;">
+								<span class="regex optional"
+									><span class="token keyword">throws</span>
+									<span
+										class="regex at-least-one"
+										separator=","
+										><span class="token class-name"
+											>Exception</span
+										></span
+									></span
+								>
+							</div>
+						</code>
+						<!-- prettier-ignore -->
+						<ul>
+							<li>Methods can be overloaded!</li>
+							<li>Variadic arguments <code class="language-java">(T...)</code>
+								behave like arrays
+							</li>
+						</ul>
+					</div>
 				</section>
 
 				<section>
