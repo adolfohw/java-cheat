@@ -156,11 +156,12 @@ public class HelloWorld {
 									<td>public</td>
 								</tr>
 								<tr>
+									<td>default</td>
 									<td>synchronized</td>
 									<td>volatile</td>
-									<td>native</td>
 								</tr>
 								<tr>
+									<td>native</td>
 									<td>transient</td>
 									<td>strictfp</td>
 								</tr>
@@ -453,132 +454,156 @@ public class HelloWorld {
 				<section>
 					<h3>Modifiers</h3>
 
-					<table class="modifiers">
-						<thead>
-							<tr>
-								<th rowspan="2">Type</th>
-								<th rowspan="2">Modifier</th>
-								<th colspan="5">Impact</th>
-							</tr>
-							<tr>
-								<th>Class</th>
-								<th>Field</th>
-								<th>Method</th>
-								<th>Interface</th>
-								<th>Enum</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td rowspan="2">Access</td>
-								<td>None</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">static</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td rowspan="4">Visibility</td>
-								<td class="token keyword">private</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td>None</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">protected</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">public</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td rowspan="2">Mutability</td>
-								<td>None</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">final</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td rowspan="6">Other</td>
-								<td class="token keyword">abstract</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">synchronized</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">native</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">transient</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-							<tr>
-								<td class="token keyword">strictfp</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-								<td>N/A</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="modifiers">
+						<table>
+							<caption>
+								Main
+							</caption>
+							<thead>
+								<tr>
+									<th rowspan="2">Type</th>
+									<th rowspan="2">Modifier</th>
+									<th colspan="5">Impact</th>
+								</tr>
+								<tr>
+									<th>Interface</th>
+									<th>Enum</th>
+									<th>Class</th>
+									<th>Method</th>
+									<th>Field</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="1">Access</td>
+									<td class="token keyword">static</td>
+									<td class="na" colspan="3">N/A</td>
+									<td colspan="2">
+										Accessible as class variables
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="4">Visibility</td>
+									<td class="token keyword">private</td>
+									<td class="na">N/A</td>
+									<td colspan="4">
+										Visible from within the declared class
+										only
+									</td>
+								</tr>
+								<tr>
+									<td>None</td>
+									<td colspan="5">
+										Visible within the package
+									</td>
+								</tr>
+								<tr>
+									<td class="token keyword">protected</td>
+									<td class="na">N/A</td>
+									<td colspan="4">
+										Visible within the package and
+										subclasses
+									</td>
+								</tr>
+								<tr>
+									<td class="token keyword">public</td>
+									<td colspan="5">Visible anywhere</td>
+								</tr>
+								<tr>
+									<td rowspan="1">Mutability</td>
+									<td class="token keyword">final</td>
+									<td class="na" colspan="2">N/A</td>
+									<td>Cannot be subclassed</td>
+									<td colspan="2">
+										Cannot be modified
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<caption>
+								Other
+							</caption>
+							<thead>
+								<tr>
+									<th rowspan="2">Modifier</th>
+									<th colspan="4">Impact</th>
+								</tr>
+								<tr>
+									<th>Interface</th>
+									<th>Class</th>
+									<th>Method</th>
+									<th>Field</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="token keyword">abstract</td>
+									<td class="na">N/A</td>
+									<td>Cannot be instantiated</td>
+									<td>Must be implemented in subclasses</td>
+									<td class="na">N/A</td>
+								</tr>
+								<tr>
+									<td class="token keyword note">default</td>
+									<td class="na" colspan="2">N/A</td>
+									<td>
+										Has a default implementation
+									</td>
+									<td class="na">N/A</td>
+								</tr>
+								<tr>
+									<td class="token keyword">synchronized</td>
+									<td class="na" colspan="2">N/A</td>
+									<td>
+										Acquires its object's mutex lock when
+										called
+									</td>
+									<td class="na">N/A</td>
+								</tr>
+								<tr>
+									<td class="token keyword">native</td>
+									<td class="na" colspan="2">N/A</td>
+									<td>Implemented in another language</td>
+									<td class="na">N/A</td>
+								</tr>
+								<tr>
+									<td class="token keyword">volatile</td>
+									<td class="na" colspan="3">N/A</td>
+									<td>Don't compile me away, PLEASE 🥺</td>
+								</tr>
+								<tr>
+									<td class="token keyword">transient</td>
+									<td class="na" colspan="3">N/A</td>
+									<td>
+										Not a part of its object's serialized
+										form
+									</td>
+								</tr>
+								<tr>
+									<td class="token keyword">strictfp</td>
+									<td colspan="3">
+										Prohibits intermediate floating point
+										results from using larger
+										representations
+									</td>
+									<td class="na">N/A</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="5">
+										<ul>
+											<li>
+												Only acts as a modifier in
+												interface methods
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
 				</section>
 
 				<section>

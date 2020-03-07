@@ -3,6 +3,8 @@
 :root {
   --java-orange: #ed8b00;
   --java-blue: #007396;
+  --monospace: Fira Code, monospace;
+  --light-border: 1px solid lightgray;
 }
 
 * {
@@ -71,7 +73,7 @@ h1 + p {
 }
 
 h2 {
-  border-bottom: 1px solid lightgray;
+  border-bottom: var(--light-border);
 }
 
 h2::before {
@@ -111,6 +113,11 @@ table .note::after {
   position: relative;
 }
 
+table caption {
+  font-family: var(--monospace);
+  font-weight: bold;
+}
+
 table td,
 table th {
   margin: 0;
@@ -119,17 +126,17 @@ table th {
 
 table td:not(:last-child),
 table th:not(:last-child) {
-  border-right: 1px solid lightgray;
+  border-right: var(--light-border);
 }
 
 table th {
-  border-bottom: 1px solid lightgray;
+  border-bottom: var(--light-border);
 }
 
 table tfoot {
   counter-reset: note-items;
   color: gray;
-  border-top: 1px solid lightgray;
+  border-top: var(--light-border);
   font-size: small;
   text-align: left;
   padding-left: 1em;
@@ -168,7 +175,7 @@ table tfoot li::before {
 
 .shell {
   font-size: 14px;
-  font-family: Fira Code, monospace;
+  font-family: var(--monospace);
   background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), -webkit-gradient(linear, left top, left bottom, color-stop(1.6em, whitesmoke), color-stop(1.6em, #5b6370));
   background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
   border-radius: 7px;
@@ -252,7 +259,7 @@ table tfoot li::before {
 }
 
 .primitives td:not(:last-child) {
-  font-family: Fira Code, monospace;
+  font-family: var(--monospace);
 }
 
 .primitives td:nth-child(2) {
@@ -260,18 +267,19 @@ table tfoot li::before {
 }
 
 .operators td:last-child {
-  font-family: Fira Code, monospace;
+  font-family: var(--monospace);
 }
 
 .modifiers .token {
-  font-family: Fira Code, monospace;
+  font-family: var(--monospace);
 }
 
-.modifiers tbody td[rowspan] {
-  border-top: 1px solid lightgray;
+.modifiers .na {
+  color: transparent;
+  background: #eee3;
 }
 
-.modifiers tbody td[rowspan] ~ td {
-  border-top: 1px solid lightgray;
+.modifiers tbody td {
+  border-top: var(--light-border);
 }
 /*# sourceMappingURL=index.css.map */

@@ -3,6 +3,8 @@
 :root {
 	--java-orange: #ed8b00;
 	--java-blue: #007396;
+	--monospace: Fira Code, monospace;
+	--light-border: 1px solid lightgray;
 }
 
 * {
@@ -70,7 +72,7 @@ h1 {
 }
 
 h2 {
-	border-bottom: 1px solid lightgray;
+	border-bottom: var(--light-border);
 
 	&::before {
 		content: '#';
@@ -106,24 +108,29 @@ table {
 		}
 	}
 
+	caption {
+		font-family: var(--monospace);
+		font-weight: bold;
+	}
+
 	td,
 	th {
 		margin: 0;
 		padding: 3px 0.75em;
 
 		&:not(:last-child) {
-			border-right: 1px solid lightgray;
+			border-right: var(--light-border);
 		}
 	}
 
 	th {
-		border-bottom: 1px solid lightgray;
+		border-bottom: var(--light-border);
 	}
 
 	tfoot {
 		counter-reset: note-items;
 		color: gray;
-		border-top: 1px solid lightgray;
+		border-top: var(--light-border);
 		font-size: small;
 		text-align: left;
 		padding-left: 1em;
@@ -164,7 +171,7 @@ table {
 
 .shell {
 	font-size: 14px;
-	font-family: Fira Code, monospace;
+	font-family: var(--monospace);
 	background-image: radial-gradient(
 			circle at 0.8em 0.8em,
 			#ff605c 7px,
@@ -244,7 +251,7 @@ table {
 
 .primitives {
 	td:not(:last-child) {
-		font-family: Fira Code, monospace;
+		font-family: var(--monospace);
 	}
 
 	td:nth-child(2) {
@@ -253,19 +260,22 @@ table {
 }
 
 .operators td:last-child {
-	font-family: Fira Code, monospace;
+	font-family: var(--monospace);
 }
 
 .modifiers {
 	.token {
-		font-family: Fira Code, monospace;
+		font-family: var(--monospace);
 	}
 
-	tbody td[rowspan] {
-		border-top: 1px solid lightgray;
+	.na {
+		color: transparent;
+		background: #eee3;
+	}
 
-		~ td {
-			border-top: 1px solid lightgray;
+	tbody {
+		td {
+			border-top: var(--light-border);
 		}
 	}
 }
