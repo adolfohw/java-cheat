@@ -27,6 +27,11 @@ main > section {
 	break-after: always;
 }
 
+pre {
+	tab-size: 4;
+	line-height: 1.5;
+}
+
 abbr[title] {
 	counter-increment: notes;
 	color: var(--java-blue);
@@ -163,51 +168,37 @@ ul {
 		color: silver;
 	}
 
-	&.optional {
-		&::before {
-			content: '<';
-		}
+	&::before {
+		content: '<';
+	}
 
+	&::after {
+		content: '>';
+	}
+
+	&.or {
+		> *:not(:last-child)::after {
+			content: ' | ';
+			color: silver;
+		}
+	}
+
+	&.optional {
 		&::after {
 			content: '>?';
 		}
 	}
 
 	&.many {
-		&::before {
-			content: '<';
-		}
-
 		&::after {
-			content: '>*';
+			content: '>' attr(separator) '*';
 		}
 	}
 
 	&.at-least-one {
-		&::before {
-			content: '<';
-		}
-
 		&::after {
-			content: '>+';
+			content: '>' attr(separator) '+';
 		}
-	}
-}
-
-.descriptor {
-	color: gray;
-
-	&::after,
-	&::before {
-		color: silver;
-	}
-
-	&::after {
-		content: ']';
-	}
-
-	&::before {
-		content: '[';
 	}
 }
 

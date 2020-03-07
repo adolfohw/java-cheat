@@ -34,6 +34,13 @@ main > section {
           break-after: always;
 }
 
+pre {
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  line-height: 1.5;
+}
+
 abbr[title] {
   counter-increment: notes;
   color: var(--java-blue);
@@ -173,44 +180,29 @@ ul ol li::before {
   color: silver;
 }
 
-.regex.optional::before {
+.regex::before {
   content: '<';
+}
+
+.regex::after {
+  content: '>';
+}
+
+.regex.or > *:not(:last-child)::after {
+  content: ' | ';
+  color: silver;
 }
 
 .regex.optional::after {
   content: '>?';
 }
 
-.regex.many::before {
-  content: '<';
-}
-
 .regex.many::after {
-  content: '>*';
-}
-
-.regex.at-least-one::before {
-  content: '<';
+  content: ">" attr(separator) "*";
 }
 
 .regex.at-least-one::after {
-  content: '>+';
-}
-
-.descriptor {
-  color: gray;
-}
-
-.descriptor::after, .descriptor::before {
-  color: silver;
-}
-
-.descriptor::after {
-  content: ']';
-}
-
-.descriptor::before {
-  content: '[';
+  content: ">" attr(separator) "+";
 }
 
 .shell {

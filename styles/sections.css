@@ -49,7 +49,16 @@
   border-top: var(--light-border);
 }
 
-.flow-control {
+.control-flow {
+  list-style: none;
+}
+
+.variables {
+  -webkit-font-variant-ligatures: none;
+          font-variant-ligatures: none;
+}
+
+.variables ul {
   list-style: none;
 }
 /*# sourceMappingURL=sections.css.map */
