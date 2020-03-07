@@ -80,31 +80,19 @@ h2 {
 }
 
 h3 {
+	margin-bottom: 20px;
 	text-decoration: dashed underline var(--java-blue);
 	text-underline-offset: 3px;
-}
 
-h3.blink {
-	text-decoration-style: solid;
+	&.blink {
+		text-decoration-style: solid;
+	}
 }
 
 table {
-	counter-reset: notes;
 	border-radius: 7px;
 	box-shadow: 0 0 2px gray;
 	width: 100%;
-
-	.note {
-		counter-increment: notes;
-
-		&::after {
-			bottom: 7px;
-			content: counter(notes);
-			color: var(--java-orange);
-			font-size: small;
-			position: relative;
-		}
-	}
 
 	caption {
 		font-family: var(--monospace);
@@ -126,15 +114,36 @@ table {
 	}
 
 	tfoot {
-		counter-reset: note-items;
-		color: gray;
 		border-top: var(--light-border);
-		font-size: small;
+
 		text-align: left;
 		padding-left: 1em;
+	}
+}
+
+table,
+ul {
+	counter-reset: notes;
+
+	.note {
+		counter-increment: notes;
+
+		&::after {
+			bottom: 7px;
+			content: counter(notes);
+			color: var(--java-orange);
+			font-size: small;
+			position: relative;
+		}
+	}
+
+	ol {
+		counter-reset: note-items;
 
 		li {
+			color: gray;
 			counter-increment: note-items;
+			font-size: small;
 			list-style: none;
 			margin: 0;
 
@@ -148,6 +157,41 @@ table {
 
 .regex {
 	color: gray;
+
+	&::after,
+	&::before {
+		color: silver;
+	}
+
+	&.optional {
+		&::before {
+			content: '<';
+		}
+
+		&::after {
+			content: '>?';
+		}
+	}
+
+	&.many {
+		&::before {
+			content: '<';
+		}
+
+		&::after {
+			content: '>*';
+		}
+	}
+
+	&.at-least-one {
+		&::before {
+			content: '<';
+		}
+
+		&::after {
+			content: '>+';
+		}
+	}
 }
 
 .descriptor {
@@ -155,7 +199,7 @@ table {
 
 	&::after,
 	&::before {
-		color: lightgray;
+		color: silver;
 	}
 
 	&::after {

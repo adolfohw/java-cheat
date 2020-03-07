@@ -48,4 +48,8 @@
 .modifiers tbody td {
   border-top: var(--light-border);
 }
+
+.flow-control {
+  list-style: none;
+}
 /*# sourceMappingURL=sections.css.map */

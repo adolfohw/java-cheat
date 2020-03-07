@@ -82,6 +82,7 @@ h2::before {
 }
 
 h3 {
+  margin-bottom: 20px;
   -webkit-text-decoration: dashed underline var(--java-blue);
           text-decoration: dashed underline var(--java-blue);
   text-underline-offset: 3px;
@@ -93,23 +94,10 @@ h3.blink {
 }
 
 table {
-  counter-reset: notes;
   border-radius: 7px;
   -webkit-box-shadow: 0 0 2px gray;
           box-shadow: 0 0 2px gray;
   width: 100%;
-}
-
-table .note {
-  counter-increment: notes;
-}
-
-table .note::after {
-  bottom: 7px;
-  content: counter(notes);
-  color: var(--java-orange);
-  font-size: small;
-  position: relative;
 }
 
 table caption {
@@ -133,21 +121,46 @@ table th {
 }
 
 table tfoot {
-  counter-reset: note-items;
-  color: gray;
   border-top: var(--light-border);
-  font-size: small;
   text-align: left;
   padding-left: 1em;
 }
 
-table tfoot li {
+table,
+ul {
+  counter-reset: notes;
+}
+
+table .note,
+ul .note {
+  counter-increment: notes;
+}
+
+table .note::after,
+ul .note::after {
+  bottom: 7px;
+  content: counter(notes);
+  color: var(--java-orange);
+  font-size: small;
+  position: relative;
+}
+
+table ol,
+ul ol {
+  counter-reset: note-items;
+}
+
+table ol li,
+ul ol li {
+  color: gray;
   counter-increment: note-items;
+  font-size: small;
   list-style: none;
   margin: 0;
 }
 
-table tfoot li::before {
+table ol li::before,
+ul ol li::before {
   content: counter(note-items) " ";
   color: var(--java-orange);
 }
@@ -156,12 +169,40 @@ table tfoot li::before {
   color: gray;
 }
 
+.regex::after, .regex::before {
+  color: silver;
+}
+
+.regex.optional::before {
+  content: '<';
+}
+
+.regex.optional::after {
+  content: '>?';
+}
+
+.regex.many::before {
+  content: '<';
+}
+
+.regex.many::after {
+  content: '>*';
+}
+
+.regex.at-least-one::before {
+  content: '<';
+}
+
+.regex.at-least-one::after {
+  content: '>+';
+}
+
 .descriptor {
   color: gray;
 }
 
 .descriptor::after, .descriptor::before {
-  color: lightgray;
+  color: silver;
 }
 
 .descriptor::after {

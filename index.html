@@ -16,6 +16,7 @@
 			<h1>☕ Java is <em>definitely</em> not spooky</h1>
 			<p>I promise 🙂</p>
 		</header>
+
 		<main>
 			<section>
 				<h2 id="basics">The Basics</h2>
@@ -29,11 +30,12 @@
 							C-like&trade; language that compiles into bytecode,
 							which is then run on the
 							<abbr title="Java Virtual Machine">JVM</abbr>. This
-							means that it is all about classes, and that Java apps
-							are very portable. Allegedly.
+							means that it is all about classes, and that Java
+							apps are very portable. Allegedly.
 						</p>
 						<p>
-							The <abbr title="Java Development Kit">JDK</abbr> can be
+							The
+							<abbr title="Java Development Kit">JDK</abbr> can be
 							downloaded from
 							<a
 								href="https://www.oracle.com/java/technologies/javase-downloads.html"
@@ -75,6 +77,7 @@ public class HelloWorld {
 					</div>
 				</section>
 			</section>
+
 			<section>
 				<h2 id="tooling">Tooling</h2>
 
@@ -606,12 +609,12 @@ public class HelloWorld {
 							<tfoot>
 								<tr>
 									<td colspan="5">
-										<ul>
+										<ol>
 											<li>
 												Only acts as a modifier in
 												interface methods
 											</li>
-										</ul>
+										</ol>
 									</td>
 								</tr>
 							</tfoot>
@@ -628,7 +631,75 @@ public class HelloWorld {
 				<section>
 					<h3 id="flow-control">Flow control</h3>
 
-					<div class="flow-control"></div>
+					<ul class="flow-control">
+						<li class="note">
+							<code class="language-java">
+								switch (elem) { case val: /* ... */ break;
+								default: /* ... */ break; }
+							</code>
+						</li>
+						<li class="note">
+							<code class="language-java"
+								>if (expr) {/* ... */} else if (expr);
+								else;</code
+							>
+						</li>
+						<li>
+							<code class="language-java">
+								for (int i = 0; i < 10; i++) {/* ... */}
+							</code>
+						</li>
+						<li>
+							<code class="language-java">
+								for (T elem: Iterable&lt;T&gt;) {/* ... */}
+							</code>
+						</li>
+						<li>
+							<code class="language-java">
+								while (expr) {/* ... */}
+							</code>
+						</li>
+						<li>
+							<code class="language-java">
+								do {/* ... */} while (expr);
+							</code>
+						</li>
+						<li class="note">
+							<span class="descriptor">
+								<code class="language-java">break</code> ||
+								<code class="language-java">continue</code>
+							</span>
+							<code class="regex optional">label</code
+							><code class="language-java">;</code>
+						</li>
+						<li>
+							<code class="language-java">return </code>
+							<code class="regex optional">expr</code>
+							<code class="language-java">;</code>
+						</li>
+						<li>
+							<ol>
+								<li>
+									Switchable types: integers (except
+									<code class="language-java">long</code>),
+									<code class="language-java">char</code>,
+									<code class="language-java">String</code>,
+									and enumerations
+								</li>
+								<li>
+									Curly braces are optional for single
+									statements; this is valid for other control
+									statements as well
+								</li>
+								<li>
+									Only usable in
+									<code class="language-java">for</code> and
+									<code class="language-java">while</code>
+									statements
+								</li>
+							</ol>
+						</li>
+					</ul>
 				</section>
 
 				<section>
