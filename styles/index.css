@@ -20,6 +20,7 @@
 }
 
 body {
+  counter-reset: notes;
   max-width: 80ch;
 }
 
@@ -27,14 +28,13 @@ section {
   margin: 3em 0;
 }
 
-@media print {
-  section {
-    -webkit-column-break-before: page;
-            break-before: page;
-  }
+main > section {
+  -webkit-column-break-after: always;
+          break-after: always;
 }
 
 abbr[title] {
+  counter-increment: notes;
   color: var(--java-blue);
   cursor: help;
   text-decoration: none;
@@ -86,13 +86,64 @@ h3 {
   text-underline-offset: 3px;
 }
 
-table {
-  border: 1px solid lightgray;
-  border-radius: 7px;
+h3.blink {
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
 }
 
-table margin * {
-  margin: 0.25em 0;
+table {
+  counter-reset: notes;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 0 2px gray;
+          box-shadow: 0 0 2px gray;
+  width: 100%;
+}
+
+table .note {
+  counter-increment: notes;
+}
+
+table .note::after {
+  bottom: 7px;
+  content: counter(notes);
+  color: var(--java-orange);
+  font-size: small;
+  position: relative;
+}
+
+table td,
+table th {
+  margin: 0;
+  padding: 3px 0.75em;
+}
+
+table td:not(:last-child),
+table th:not(:last-child) {
+  border-right: 1px solid lightgray;
+}
+
+table th {
+  border-bottom: 1px solid lightgray;
+}
+
+table tfoot {
+  counter-reset: note-items;
+  color: gray;
+  border-top: 1px solid lightgray;
+  font-size: small;
+  text-align: left;
+  padding-left: 1em;
+}
+
+table tfoot li {
+  counter-increment: note-items;
+  list-style: none;
+  margin: 0;
+}
+
+table tfoot li::before {
+  content: counter(note-items) " ";
+  color: var(--java-orange);
 }
 
 .regex {
@@ -118,8 +169,8 @@ table margin * {
 .shell {
   font-size: 14px;
   font-family: Fira Code, monospace;
-  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 7px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 7px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 7px), -webkit-gradient(linear, left top, left bottom, color-stop(1.6em, whitesmoke), color-stop(1.6em, #5b6370));
-  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 7px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 7px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 7px), linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
+  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), -webkit-gradient(linear, left top, left bottom, color-stop(1.6em, whitesmoke), color-stop(1.6em, #5b6370));
+  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
   border-radius: 7px;
   -webkit-box-shadow: 0 3px 10px #8888;
           box-shadow: 0 3px 10px #8888;
@@ -174,40 +225,29 @@ table margin * {
   color: pink;
 }
 
-.note {
-  color: var(--java-orange);
-}
-
-.footer-note {
-  color: gray;
-  font-size: small;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
-  text-align: left;
-  padding-left: 1em;
-}
-
 .reserved-words {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
   display: -ms-grid;
   display: grid;
-  gap: 1em 2em;
+  gap: 0 1em;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   text-align: center;
 }
 
-.reserved-words tr {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+.reserved-words tbody td {
+  border: none;
+  padding: 2px 5px;
+  width: 33%;
 }
 
-.reserved-words td.unused {
+.reserved-words tbody td:not(:last-child) {
+  border-right: none;
+}
+
+.reserved-words tbody td.unused {
   color: gray;
 }
 
@@ -217,5 +257,21 @@ table margin * {
 
 .primitives td:nth-child(2) {
   text-align: center;
+}
+
+.operators td:last-child {
+  font-family: Fira Code, monospace;
+}
+
+.modifiers .token {
+  font-family: Fira Code, monospace;
+}
+
+.modifiers tbody td[rowspan] {
+  border-top: 1px solid lightgray;
+}
+
+.modifiers tbody td[rowspan] ~ td {
+  border-top: 1px solid lightgray;
 }
 /*# sourceMappingURL=index.css.map */

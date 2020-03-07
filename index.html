@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles/index.css" />
 		<link rel="stylesheet" href="styles/prism.css" />
+		<script src="index.js" defer></script>
 		<script src="prism.js"></script>
 		<title>☕ Java Cheat Sheet</title>
 	</head>
@@ -132,6 +133,7 @@ public class HelloWorld {
 					</ul>
 				</section>
 			</section>
+
 			<section>
 				<h2>Syntax</h2>
 
@@ -269,22 +271,22 @@ public class HelloWorld {
 									<td>import</td>
 									<td>instanceof</td>
 								</tr>
+								<!-- prettier-ignore -->
 								<tr>
 									<td>var</td>
-									<td class="unused">
-										const<sup class="note">*</sup>
-									</td>
-									<td class="unused">
-										goto<sup class="note">*</sup>
-									</td>
+									<td class="note unused">const</td>
+									<td class="note unused">goto</td>
 								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
-									<td class="footer-note">
-										<span class="note">*</span>
-										These keywords are not used,<br />
-										but are reserved nonetheless.
+									<td colspan="3">
+										<ol>
+											<li>
+												These keywords are not used, but
+												are reserved nonetheless.
+											</li>
+										</ol>
 									</td>
 								</tr>
 							</tfoot>
@@ -300,7 +302,7 @@ public class HelloWorld {
 							<tr>
 								<th>Type</th>
 								<th>Default value</th>
-								<th>What is it?<sup class="note">*</sup></th>
+								<th class="note">What is it?</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -354,12 +356,16 @@ public class HelloWorld {
 						</tbody>
 						<tfoot>
 							<tr>
-								<td class="footer-note" colspan="3">
-									<span class="note">*</span> The size listed
-									here does not necessarily reflect on the
-									actual size of primitive values or their
-									containers, since the JVM packs them at its
-									own discretion.
+								<td colspan="3">
+									<ol>
+										<li>
+											The size listed here does not
+											necessarily reflect on the actual
+											size of primitive values or their
+											containers, since the JVM packs them
+											at its own discretion.
+										</li>
+									</ol>
 								</td>
 							</tr>
 						</tfoot>
@@ -368,10 +374,211 @@ public class HelloWorld {
 
 				<section>
 					<h3>Operators</h3>
+
+					<table class="operators">
+						<thead>
+							<tr>
+								<th>
+									Operator
+								</th>
+								<th class="note">
+									Precedence
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									Postfix
+								</td>
+								<td>
+									i++ i--
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Unary
+								</td>
+								<td>
+									++i --i +i -i ~i !i
+								</td>
+							</tr>
+							<tr>
+								<td>Arithmetic</td>
+								<td>* / % + -</td>
+							</tr>
+							<tr>
+								<td>Shift</td>
+								<td><< >> <span class="note">>>></span></td>
+							</tr>
+							<tr>
+								<td>Relational</td>
+								<td>
+									< > <= >=
+									<span class="token keyword"
+										>instanceof</span
+									>
+									== !=
+								</td>
+							</tr>
+							<tr>
+								<td>Bitwise</td>
+								<td>& ^ |</td>
+							</tr>
+							<tr>
+								<td>Logical</td>
+								<td>&& || <span class="note">?:</span></td>
+							</tr>
+							<tr>
+								<td>Assignment</td>
+								<td>= += -= *= /= %= &= ^= |= <<= >>= >>>=</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2">
+									<ol>
+										<li>
+											From top to bottom, left to right
+										</li>
+										<li>Unsigned right shift</li>
+										<li>Ternary operator</li>
+									</ol>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
 				</section>
 
 				<section>
 					<h3>Modifiers</h3>
+
+					<table class="modifiers">
+						<thead>
+							<tr>
+								<th rowspan="2">Type</th>
+								<th rowspan="2">Modifier</th>
+								<th colspan="5">Impact</th>
+							</tr>
+							<tr>
+								<th>Class</th>
+								<th>Field</th>
+								<th>Method</th>
+								<th>Interface</th>
+								<th>Enum</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="2">Access</td>
+								<td>None</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">static</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td rowspan="4">Visibility</td>
+								<td class="token keyword">private</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td>None</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">protected</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">public</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td rowspan="2">Mutability</td>
+								<td>None</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">final</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td rowspan="6">Other</td>
+								<td class="token keyword">abstract</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">synchronized</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">native</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">transient</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td class="token keyword">strictfp</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section>
@@ -398,9 +605,11 @@ public class HelloWorld {
 					<h3>Enumerations</h3>
 				</section>
 			</section>
+
 			<section>
 				<h2>Documentation</h2>
 			</section>
+
 			<section>
 				<h2>Tests</h2>
 			</section>
