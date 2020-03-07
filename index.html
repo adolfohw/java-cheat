@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/defaults.css" />
 		<link rel="stylesheet" href="styles/index.css" />
+		<link rel="stylesheet" href="styles/sections.css" />
 		<link rel="stylesheet" href="styles/prism.css" />
 		<script src="index.js" defer></script>
 		<script src="prism.js"></script>
@@ -53,17 +55,20 @@
 
 				<section>
 					<h3>Hello, world! 👋</h3>
-					<pre><code class="language-java">// in HelloWorld.java
+
+					<div class="hello-world">
+						<pre><code class="language-java">// in HelloWorld.java
 public class HelloWorld {
 	public static void main(String[] args) {
 		System.out.println("Hello, world!");
 	}
 }</code></pre>
-					<p>And to run it:</p>
-					<ul class="shell">
-						<li><span class="cmd">javac</span> HelloWorld</li>
-						<li><span class="cmd">java</span> HelloWorld</li>
-					</ul>
+						<p>And to run it:</p>
+						<ul class="shell">
+							<li><span class="cmd">javac</span> HelloWorld</li>
+							<li><span class="cmd">java</span> HelloWorld</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section>
@@ -71,66 +76,70 @@ public class HelloWorld {
 
 				<section>
 					<h3>🐘 Gradle</h3>
-					<p>
-						Gradle is a common build tool in the Java world, and can
-						be downloaded from
-						<a
-							href="https://gradle.org/install/"
-							target="_blank"
-							rel="noopener noreferrer"
-							>its website</a
-						>. To start a new Java project:
-					</p>
-					<ul class="shell" directory="~/java-IS-cool">
-						<li><span class="cmd">mkdir</span> java-IS-cool</li>
-						<li><span class="cmd">cd</span> java-IS-cool</li>
-						<li><span class="cmd">gradle</span> init</li>
-					</ul>
-					<p>
-						At this point, it's
-						<a
-							href="https://guides.gradle.org/building-java-libraries/#assemble_the_library_jar"
-							target="_blank"
-							rel="noopener noreferrer"
-							>recommended</a
-						>
-						to use the <code>gradlew</code> scripts generated in the
-						project's root. These are some useful tasks:
-					</p>
-					<ul class="shell" directory="~/java-IS-cool">
-						<li>
-							<span class="cmd">./gradlew</span> build
-							<span class="comment"
-								>&nbsp;&nbsp;# builds your app and runs
-								tests</span
+
+					<div class="gradle">
+						<p>
+							Gradle is a common build tool in the Java world, and
+							can be downloaded from
+							<a
+								href="https://gradle.org/install/"
+								target="_blank"
+								rel="noopener noreferrer"
+								>its website</a
+							>. To start a new Java project:
+						</p>
+						<ul class="shell" directory="~/java-IS-cool">
+							<li><span class="cmd">mkdir</span> java-IS-cool</li>
+							<li><span class="cmd">cd</span> java-IS-cool</li>
+							<li><span class="cmd">gradle</span> init</li>
+						</ul>
+						<p>
+							At this point, it's
+							<a
+								href="https://guides.gradle.org/building-java-libraries/#assemble_the_library_jar"
+								target="_blank"
+								rel="noopener noreferrer"
+								>recommended</a
 							>
-						</li>
-						<li>
-							<span class="cmd">./gradlew</span> jar
-							<span class="comment"
-								>&nbsp;&nbsp;&nbsp;&nbsp;# makes a jar archive
-								of the project</span
-							>
-						</li>
-						<li>
-							<span class="cmd">./gradlew</span> run
-							<span class="comment"
-								>&nbsp;&nbsp;&nbsp;&nbsp;# runs your app</span
-							>
-						</li>
-						<li>
-							<span class="cmd">./gradlew</span> test
-							<span class="comment"
-								>&nbsp;&nbsp;&nbsp;# runs unit tests</span
-							>
-						</li>
-						<li>
-							<span class="cmd">./gradlew</span> tasks
-							<span class="comment"
-								>&nbsp;&nbsp;# shows all tasks!</span
-							>
-						</li>
-					</ul>
+							to use the <code>gradlew</code> scripts generated in
+							the project's root. These are some useful tasks:
+						</p>
+						<ul class="shell" directory="~/java-IS-cool">
+							<li>
+								<span class="cmd">./gradlew</span> build
+								<span class="comment"
+									>&nbsp;&nbsp;# builds your app and runs
+									tests</span
+								>
+							</li>
+							<li>
+								<span class="cmd">./gradlew</span> jar
+								<span class="comment"
+									>&nbsp;&nbsp;&nbsp;&nbsp;# makes a jar
+									archive of the project</span
+								>
+							</li>
+							<li>
+								<span class="cmd">./gradlew</span> run
+								<span class="comment"
+									>&nbsp;&nbsp;&nbsp;&nbsp;# runs your
+									app</span
+								>
+							</li>
+							<li>
+								<span class="cmd">./gradlew</span> test
+								<span class="comment"
+									>&nbsp;&nbsp;&nbsp;# runs unit tests</span
+								>
+							</li>
+							<li>
+								<span class="cmd">./gradlew</span> tasks
+								<span class="comment"
+									>&nbsp;&nbsp;# shows all tasks!</span
+								>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 
@@ -139,6 +148,7 @@ public class HelloWorld {
 
 				<section>
 					<h3>Reserved words</h3>
+
 					<code class="reserved-words">
 						<table>
 							<caption>
@@ -607,26 +617,38 @@ public class HelloWorld {
 
 				<section>
 					<h3>Variables & fields</h3>
+
+					<div class="variables"></div>
 				</section>
 
 				<section>
 					<h3>Flow control</h3>
+
+					<div class="flow-control"></div>
 				</section>
 
 				<section>
 					<h3>Interfaces</h3>
+
+					<div class="interfaces"></div>
 				</section>
 
 				<section>
 					<h3>Classes</h3>
+
+					<div class="classes"></div>
 				</section>
 
 				<section>
 					<h3>Methods</h3>
+
+					<div class="methods"></div>
 				</section>
 
 				<section>
 					<h3>Enumerations</h3>
+
+					<div class="enumerations"></div>
 				</section>
 			</section>
 

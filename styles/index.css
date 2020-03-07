@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("defaults.css");
 :root {
   --java-orange: #ed8b00;
   --java-blue: #007396;
@@ -230,56 +229,5 @@ table tfoot li::before {
   content: ' > ';
   font-weight: bold;
   color: pink;
-}
-
-.reserved-words {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  display: -ms-grid;
-  display: grid;
-  gap: 0 1em;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  text-align: center;
-}
-
-.reserved-words tbody td {
-  border: none;
-  padding: 2px 5px;
-  width: 33%;
-}
-
-.reserved-words tbody td:not(:last-child) {
-  border-right: none;
-}
-
-.reserved-words tbody td.unused {
-  color: gray;
-}
-
-.primitives td:not(:last-child) {
-  font-family: var(--monospace);
-}
-
-.primitives td:nth-child(2) {
-  text-align: center;
-}
-
-.operators td:last-child {
-  font-family: var(--monospace);
-}
-
-.modifiers .token {
-  font-family: var(--monospace);
-}
-
-.modifiers .na {
-  color: transparent;
-  background: #eee3;
-}
-
-.modifiers tbody td {
-  border-top: var(--light-border);
 }
 /*# sourceMappingURL=index.css.map */
