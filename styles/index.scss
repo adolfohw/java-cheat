@@ -178,6 +178,7 @@ ul {
 	position: fixed;
 	right: 1.5em;
 	transition: bottom cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.75s;
+	z-index: 9999;
 
 	&.active {
 		bottom: 1em;

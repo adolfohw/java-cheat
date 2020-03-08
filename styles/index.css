@@ -198,6 +198,7 @@ ul ol li::before {
   right: 1.5em;
   -webkit-transition: bottom cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.75s;
   transition: bottom cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.75s;
+  z-index: 9999;
 }
 
 #notification.active {
