@@ -74,3 +74,13 @@
 .control-flow {
 	list-style: none;
 }
+
+.doc-tags {
+	li {
+		list-style: none;
+	}
+
+	code {
+		color: var(--java-blue);
+	}
+}

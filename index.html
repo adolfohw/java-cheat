@@ -892,6 +892,72 @@ public class HelloWorld {
 
 			<section>
 				<h2 id="documentation">Documentation</h2>
+
+				<section>
+					<h3 id="doc-anatomy">Anatomy</h3>
+
+					<pre class="doc-anatomy"><code class="language-java">/**
+ * Short summary first sentence.
+ * Some comments about the following item...
+ * These documentation comments are written in HTML!
+ * The following are some example tags,
+ * which go at the end of the doc comment.
+ * 
+ * @author     yours truly
+ * @param name followed by a description
+ * @return     the joy of documenting
+ * @see        the list of tags bellow
+ */
+public boolean getJoy(String name) {
+	try {
+		Documentation.fail();
+		return false;
+	}
+	return true;
+}</code></pre>
+				</section>
+
+				<section>
+					<h3 id="doc-tags">Tags</h3>
+
+					<ul class="doc-tags">
+						<li>
+							<code>@author</code> author of the item, list
+							multiple tags chronologically
+						</li>
+						<li>
+							<code>@version</code> version of the doc, in the
+							format
+							<code>%major.%minor, %date</code>
+						</li>
+						<li>
+							<code>@param</code> the name followed by a brief
+							description of a parameter in a method/constructor
+							signature
+						</li>
+						<li>
+							<code>@return</code>
+							description of the return value, if any
+						</li>
+						<li>
+							<code>@deprecated</code> when the method was
+							deprecated, followed by which one it was replaced
+							with
+						</li>
+						<li>
+							<code>@since</code> version which added the item
+						</li>
+						<li>
+							<code class="regex or"
+								><span>@throws</span
+								><span>@exception</span></code
+							>
+							exception name followed by a description of when it
+							might be thrown
+						</li>
+						<li><code>@see</code> a reference text or link</li>
+					</ul>
+				</section>
 			</section>
 
 			<section>
