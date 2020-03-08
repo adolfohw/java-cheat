@@ -117,7 +117,7 @@ h3:hover > .anchor {
 }
 
 table {
-  border-radius: 7px;
+  border-radius: 3px;
   -webkit-box-shadow: 0 0 2px gray;
           box-shadow: 0 0 2px gray;
   width: 100%;
@@ -323,9 +323,9 @@ ul ol li::before {
 .shell {
   font-size: 14px;
   font-family: var(--monospace);
-  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), -webkit-gradient(linear, left top, left bottom, color-stop(1.6em, whitesmoke), color-stop(1.6em, #5b6370));
-  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 7px, transparent 8px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px), linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
-  border-radius: 7px;
+  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 6px, transparent 7px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 6px, transparent 7px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 6px, transparent 7px), -webkit-gradient(linear, left top, left bottom, color-stop(1.6em, whitesmoke), color-stop(1.6em, #5b6370));
+  background-image: radial-gradient(circle at 0.8em 0.8em, #ff605c 6px, transparent 7px), radial-gradient(circle at 2.1em 0.8em, #ffbd44 6px, transparent 7px), radial-gradient(circle at 3.4em 0.8em, #00ca4e 6px, transparent 7px), linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
+  border-radius: 6px;
   -webkit-box-shadow: 0 3px 10px #8888;
           box-shadow: 0 3px 10px #8888;
   color: whitesmoke;
@@ -334,16 +334,13 @@ ul ol li::before {
 }
 
 .shell::before {
+  content: attr(directory);
   color: #444;
   display: block;
   height: 0;
   -webkit-transform: translateY(-1.6em);
           transform: translateY(-1.6em);
   text-align: center;
-}
-
-.shell[directory]::before {
-  content: attr(directory);
 }
 
 .shell ::-moz-selection {
@@ -357,11 +354,11 @@ ul ol li::before {
 }
 
 .shell .cmd {
-  color: yellow;
+  color: #ffa;
 }
 
 .shell .comment {
-  color: lightgreen;
+  color: #afa;
 }
 
 .shell li {
@@ -374,7 +371,7 @@ ul ol li::before {
 }
 
 .shell li::before {
-  content: ' > ';
+  content: '> ';
   font-weight: bold;
   color: pink;
 }

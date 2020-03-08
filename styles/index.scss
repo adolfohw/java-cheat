@@ -105,7 +105,7 @@ h3:hover > .anchor {
 }
 
 table {
-	border-radius: 7px;
+	border-radius: 3px;
 	box-shadow: 0 0 2px gray;
 	width: 100%;
 
@@ -305,28 +305,25 @@ ul {
 	font-family: var(--monospace);
 	background-image: radial-gradient(
 			circle at 0.8em 0.8em,
-			#ff605c 7px,
-			transparent 8px
+			#ff605c 6px,
+			transparent 7px
 		),
-		radial-gradient(circle at 2.1em 0.8em, #ffbd44 7px, transparent 8px),
-		radial-gradient(circle at 3.4em 0.8em, #00ca4e 7px, transparent 8px),
+		radial-gradient(circle at 2.1em 0.8em, #ffbd44 6px, transparent 7px),
+		radial-gradient(circle at 3.4em 0.8em, #00ca4e 6px, transparent 7px),
 		linear-gradient(whitesmoke 1.6em, #5b6370 1.6em);
-	border-radius: 7px;
+	border-radius: 6px;
 	box-shadow: 0 3px 10px #8888;
 	color: whitesmoke;
 	margin: 2em;
 	padding: 1.6em 1.5ch 1.5ch;
 
 	&::before {
+		content: attr(directory);
 		color: #444;
 		display: block;
 		height: 0;
 		transform: translateY(-1.6em);
 		text-align: center;
-	}
-
-	&[directory]::before {
-		content: attr(directory);
 	}
 
 	::selection {
@@ -335,11 +332,11 @@ ul {
 	}
 
 	.cmd {
-		color: yellow;
+		color: #ffa;
 	}
 
 	.comment {
-		color: lightgreen;
+		color: #afa;
 	}
 
 	li {
@@ -351,7 +348,7 @@ ul {
 		}
 
 		&::before {
-			content: ' > ';
+			content: '> ';
 			font-weight: bold;
 			color: pink;
 		}
