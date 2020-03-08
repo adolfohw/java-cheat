@@ -740,9 +740,9 @@ public class HelloWorld {
 				</section>
 
 				<section>
-					<h3 id="variables">Fields</h3>
+					<h3 id="fields">Fields</h3>
 
-					<code class="variables">
+					<code class="fields">
 						<span class="regex many">modifier</span>
 						<span class="regex">variable</span>
 					</code>
@@ -760,10 +760,12 @@ public class HelloWorld {
 										>var</span
 									></span
 								>
-								name
-								<span class="regex optional"
-									><code class="language-java"
-										>= expr</code
+								<span class="regex at-least-one" separator=","
+									>name
+									<span class="regex optional"
+										><code class="language-java"
+											>= expr</code
+										></span
 									></span
 								>;
 							</li>
@@ -777,15 +779,17 @@ public class HelloWorld {
 										>var</span
 									></span
 								>
-								arrayName
-								<span class="regex optional"
-									><span class="token punctuation"
-										>=
-										<span class="regex or"
-											><code class="language-java"
-												>new T[123]</code
-											><code class="language-java"
-												>{/* ... */}</code
+								<span class="regex at-least-one" separator=","
+									>arrayName
+									<span class="regex optional"
+										><span class="token punctuation"
+											>=
+											<span class="regex or"
+												><code class="language-java"
+													>new T[123]</code
+												><code class="language-java"
+													>{/* ... */}</code
+												></span
 											></span
 										></span
 									></span
