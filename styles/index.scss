@@ -12,15 +12,25 @@
 		color: white;
 		background: var(--java-blue);
 	}
+
+	@media print {
+		line-height: 1.2;
+	}
 }
 
 body {
 	counter-reset: notes;
 	max-width: 80ch;
+
+	@media print {
+		max-width: 100%;
+		padding: 1em;
+	}
 }
 
 section {
 	margin: 3em 0;
+	break-inside: avoid;
 }
 
 main > section {
@@ -107,6 +117,7 @@ h3:hover > .anchor {
 table {
 	border-radius: 3px;
 	box-shadow: 0 0 2px gray;
+	break-inside: avoid;
 	width: 100%;
 
 	caption {
@@ -216,9 +227,11 @@ ul {
 }
 
 #page-index {
-	margin: 3em 0;
-	columns: 3;
+	border-top: var(--light-border);
+	columns: 4;
 	line-height: 1;
+	margin: 3em 0;
+	padding-top: 3em;
 
 	li {
 		list-style: none;
