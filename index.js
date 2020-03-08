@@ -1,14 +1,20 @@
-let mainHeaders = document.getElementsByTagName('h2')
-let subHeaders = document.getElementsByTagName('h3')
+// Dashed lines are horrid on Blink
+if (navigator.userAgent.toLowerCase().indexOf('firefox') == -1) {
+	for (let header of document.getElementsByTagName('h3')) {
+		header.classList.add('blink')
+	}
+}
+
+let pageIndex = document.getElementById('page-index')
 let notification = document.getElementById('notification')
-const url = document.baseURI
+const uri = document.baseURI
 const hideNotification = () => notification.classList.remove('active')
-const fillBuffer = (title, frag) => {
+const fillBuffer = (title, url) => {
 	return ev => {
 		ev.preventDefault()
 		ev.stopPropagation()
 		let linkBuffer = document.createElement('textarea')
-		linkBuffer.value = url + frag
+		linkBuffer.value = url
 		document.body.appendChild(linkBuffer)
 		linkBuffer.select()
 		document.execCommand('copy')
@@ -20,25 +26,37 @@ const fillBuffer = (title, frag) => {
 		}
 	}
 }
+const giveLinks = (header, list) => {
+	const frag = '#' + header.id
+	const url = uri + frag
+
+	// Index
+	let link = document.createElement('li')
+	let anchor = document.createElement('a')
+	anchor.innerText = header.innerText
+	anchor.href = frag
+	link.appendChild(anchor)
+	list.appendChild(link)
+
+	// Clipboard Button
+	let btn = document.createElement('button')
+	btn.onclick = fillBuffer(header.innerText, url)
+	btn.classList.add('anchor')
+	btn.innerText = '🔗'
+	header.appendChild(btn)
+
+	return link
+}
 
 document.body.onclick = hideNotification
 
-// Dashed lines are horrid on Blink
-if (navigator.userAgent.toLowerCase().indexOf('firefox') == -1) {
-	for (let header of subHeaders) {
-		header.classList.add('blink')
-	}
-}
-
-// Headers get their own copy-able anchors
-for (let headers of [mainHeaders, subHeaders]) {
-	for (let header of headers) {
-		const frag = `#${header.id}`
-		let anchor = document.createElement('button')
-		anchor.onclick = fillBuffer(header.innerText, frag)
-		anchor.classList.add('anchor')
-		anchor.href = frag
-		anchor.innerText = '🔗'
-		header.appendChild(anchor)
+// Populate the index with header links, and give them
+// buttons to put their links in the clipboard
+for (let mainSection of document.querySelectorAll('main > section')) {
+	let newList = document.createElement('ul')
+	let mainLink = giveLinks(mainSection.querySelector('h2'), pageIndex)
+	mainLink.appendChild(newList)
+	for (let subHeader of mainSection.getElementsByTagName('h3')) {
+		giveLinks(subHeader, newList)
 	}
 }
