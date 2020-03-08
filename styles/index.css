@@ -100,6 +100,22 @@ h3.blink {
           text-decoration-style: solid;
 }
 
+h2 > .anchor,
+h3 > .anchor {
+  background: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0 10px;
+  pointer-events: visible;
+  text-decoration: none;
+  visibility: hidden;
+}
+
+h2:hover > .anchor,
+h3:hover > .anchor {
+  visibility: inherit;
+}
+
 table {
   border-radius: 7px;
   -webkit-box-shadow: 0 0 2px gray;
@@ -170,6 +186,28 @@ table ol li::before,
 ul ol li::before {
   content: counter(note-items) " ";
   color: var(--java-orange);
+}
+
+#notification {
+  background-color: white;
+  -webkit-box-shadow: 0 3px 10px #8888;
+          box-shadow: 0 3px 10px #8888;
+  bottom: -5em;
+  padding: 1em;
+  position: fixed;
+  right: 1.5em;
+  -webkit-transition: bottom cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.75s;
+  transition: bottom cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.75s;
+}
+
+#notification.active {
+  bottom: 1em;
+}
+
+@media print {
+  #notification {
+    display: none;
+  }
 }
 
 .regex {
