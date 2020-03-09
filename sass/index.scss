@@ -7,7 +7,7 @@
 
 * {
 	margin: 10px 0;
-	overflow-x: auto;
+	overflow-y: visible;
 
 	&::selection {
 		background: var(--java-blue);
@@ -27,7 +27,7 @@ body {
 	counter-reset: notes;
 	max-width: 100%;
 	overflow-x: hidden;
-	padding: 1.5em;
+	padding: 3em;
 
 	@media print {
 		padding: 1em;
@@ -42,7 +42,10 @@ body {
 
 section {
 	break-inside: avoid;
+
 	margin: 3em 0;
+	@media (min-width: 768px) {
+	}
 }
 
 main > section {
@@ -51,6 +54,11 @@ main > section {
 
 pre {
 	line-height: 1.5;
+}
+
+code,
+pre {
+	overflow-x: auto;
 	tab-size: 4;
 }
 
@@ -61,13 +69,13 @@ abbr[title] {
 	text-decoration: none;
 
 	&::after {
-		bottom: 10px;
-		content: attr(title);
-		font-size: x-small;
-		position: relative;
+		content: ' (' attr(title) ')';
 
 		@media (min-width: 768px) {
+			bottom: 10px;
 			content: '💬';
+			font-size: x-small;
+			position: relative;
 		}
 	}
 }
@@ -136,8 +144,7 @@ h3 > .anchor {
 }
 
 table {
-	border-radius: 3px;
-	box-shadow: 0 0 2px gray;
+	border: var(--light-border);
 	break-inside: avoid;
 	width: 100%;
 
@@ -257,13 +264,11 @@ ul {
 
 #page-index {
 	border-top: var(--light-border);
-	line-height: 1;
-	margin: 3em 0;
+	margin-top: 3em;
 	padding-top: 3em;
 
 	li {
 		list-style: none;
-		overflow-y: hidden;
 	}
 
 	> li {
@@ -360,7 +365,8 @@ ul {
 	color: whitesmoke;
 	font-size: 14px;
 	font-family: var(--monospace);
-	margin: 2em;
+	margin: 2em 0;
+	overflow-x: auto;
 	padding: 1.6em 1.5ch 1.5ch;
 
 	&::before {
@@ -388,6 +394,7 @@ ul {
 	li {
 		list-style: none;
 		margin: 7px 0 0;
+		white-space: nowrap;
 
 		&:first-child {
 			margin-top: 1.5ch;
@@ -398,5 +405,9 @@ ul {
 			content: '> ';
 			font-weight: bold;
 		}
+	}
+
+	@media (min-width: 768px) {
+		margin: 2em;
 	}
 }

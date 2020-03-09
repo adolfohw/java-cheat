@@ -37,8 +37,14 @@ green     #859900
 pre[class*='language-'] {
 	border-radius: 7px;
 	box-shadow: inset 0 0 3ch #fdf6e3;
-	margin: 2em;
+	margin: 2em 0;
 	padding: 1.5ch;
+}
+
+@media (min-width: 768px) {
+	pre[class*='language-'] {
+		margin: 2em;
+	}
 }
 
 code[class*='language-']::selection,
