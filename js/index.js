@@ -28,7 +28,7 @@ const fillBuffer = (title, url) => {
 }
 const giveLinks = (header, list) => {
 	const frag = '#' + header.id
-	const url = uri + frag
+	const url = uri.slice(0, uri.indexOf('#')) + frag
 
 	// Index
 	let link = document.createElement('li')
