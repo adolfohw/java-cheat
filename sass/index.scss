@@ -1,36 +1,48 @@
 :root {
 	--java-orange: #ed8b00;
 	--java-blue: #007396;
-	--monospace: Fira Code, monospace;
 	--light-border: 1px solid lightgray;
+	--monospace: Fira Code, monospace;
 }
 
 * {
 	margin: 10px 0;
+	overflow-x: auto;
 
 	&::selection {
-		color: white;
 		background: var(--java-blue);
+		color: white;
 	}
 
 	@media print {
 		line-height: 1.2;
 	}
+
+	@media (min-width: 768px) {
+		overflow-x: unset;
+	}
 }
 
 body {
 	counter-reset: notes;
-	max-width: 80ch;
+	max-width: 100%;
+	overflow-x: hidden;
+	padding: 1.5em;
 
 	@media print {
-		max-width: 100%;
 		padding: 1em;
+	}
+
+	@media (min-width: 768px) {
+		overflow-x: unset;
+		padding: 0;
+		width: 80ch;
 	}
 }
 
 section {
-	margin: 3em 0;
 	break-inside: avoid;
+	margin: 3em 0;
 }
 
 main > section {
@@ -38,21 +50,25 @@ main > section {
 }
 
 pre {
-	tab-size: 4;
 	line-height: 1.5;
+	tab-size: 4;
 }
 
 abbr[title] {
-	counter-increment: notes;
 	color: var(--java-blue);
+	counter-increment: notes;
 	cursor: help;
 	text-decoration: none;
 
 	&::after {
-		content: '💬';
 		bottom: 10px;
+		content: attr(title);
 		font-size: x-small;
 		position: relative;
+
+		@media (min-width: 768px) {
+			content: '💬';
+		}
 	}
 }
 
@@ -82,8 +98,8 @@ h2 {
 	border-bottom: var(--light-border);
 
 	&::before {
-		content: '#';
 		color: var(--java-orange);
+		content: '#';
 		margin-right: 0.5ch;
 	}
 }
@@ -106,12 +122,17 @@ h3 > .anchor {
 	margin: 0 10px;
 	pointer-events: visible;
 	text-decoration: none;
-	visibility: hidden;
+
+	@media (min-width: 768px) {
+		visibility: hidden;
+	}
 }
 
-h2:hover > .anchor,
-h3:hover > .anchor {
-	visibility: inherit;
+@media (min-width: 768px) {
+	h2:hover > .anchor,
+	h3:hover > .anchor {
+		visibility: inherit;
+	}
 }
 
 table {
@@ -141,7 +162,6 @@ table {
 
 	tfoot {
 		border-top: var(--light-border);
-
 		text-align: left;
 		padding-left: 1em;
 	}
@@ -156,8 +176,8 @@ ul {
 
 		&::after {
 			bottom: 7px;
-			content: counter(notes);
 			color: var(--java-orange);
+			content: counter(notes);
 			font-size: small;
 			position: relative;
 		}
@@ -174,8 +194,8 @@ ul {
 			margin: 0;
 
 			&::before {
-				content: counter(note-items) ' ';
 				color: var(--java-orange);
+				content: counter(note-items) ' ';
 			}
 		}
 	}
@@ -183,8 +203,9 @@ ul {
 
 #notification {
 	background-color: white;
-	box-shadow: 0 3px 10px #8888;
 	bottom: -5em;
+	box-shadow: 0 3px 10px #8888;
+	left: 20px;
 	margin: 0;
 	padding: 1em;
 	position: fixed;
@@ -203,38 +224,46 @@ ul {
 	@media print {
 		display: none;
 	}
+
+	@media (min-width: 768px) {
+		left: unset;
+	}
 }
 
 .back-to-top {
 	bottom: 20px;
 	color: white;
-	font-size: 24pt;
+	font-size: 40pt;
 	margin: 0;
-	opacity: 30%;
 	position: fixed;
 	right: 20px;
 	text-decoration: none;
 	transition: all ease-in-out 0.25s;
 	z-index: 8000;
 
-	&:hover {
-		opacity: 1;
-	}
-
 	@media print {
 		display: none;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 24pt;
+		opacity: 30%;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 
 #page-index {
 	border-top: var(--light-border);
-	columns: 4;
 	line-height: 1;
 	margin: 3em 0;
 	padding-top: 3em;
 
 	li {
 		list-style: none;
+		overflow-y: hidden;
 	}
 
 	> li {
@@ -249,8 +278,8 @@ ul {
 			font-weight: normal;
 
 			&::before {
-				content: '> ';
 				color: var(--java-orange);
+				content: '> ';
 				font-family: var(--monospace);
 				font-weight: bold;
 			}
@@ -258,8 +287,8 @@ ul {
 	}
 
 	a {
-		text-decoration: none;
 		color: initial;
+		text-decoration: none;
 
 		&:hover {
 			text-decoration: solid var(--java-blue) underline;
@@ -268,6 +297,10 @@ ul {
 
 	@media print {
 		display: none;
+	}
+
+	@media (min-width: 768px) {
+		columns: 4;
 	}
 }
 
@@ -289,8 +322,8 @@ ul {
 
 	&.or {
 		> *:not(:last-child)::after {
-			content: ' | ';
 			color: silver;
+			content: ' | ';
 		}
 	}
 
@@ -314,8 +347,6 @@ ul {
 }
 
 .shell {
-	font-size: 14px;
-	font-family: var(--monospace);
 	background-image: radial-gradient(
 			circle at 0.8em 0.8em,
 			#ff605c 6px,
@@ -327,12 +358,14 @@ ul {
 	border-radius: 6px;
 	box-shadow: 0 3px 10px #8888;
 	color: whitesmoke;
+	font-size: 14px;
+	font-family: var(--monospace);
 	margin: 2em;
 	padding: 1.6em 1.5ch 1.5ch;
 
 	&::before {
-		content: attr(directory);
 		color: #444;
+		content: attr(directory);
 		display: block;
 		height: 0;
 		transform: translateY(-1.6em);
@@ -340,8 +373,8 @@ ul {
 	}
 
 	::selection {
-		color: #333;
 		background-color: whitesmoke;
+		color: #333;
 	}
 
 	.cmd {
@@ -353,17 +386,17 @@ ul {
 	}
 
 	li {
-		margin: 7px 0 0;
 		list-style: none;
+		margin: 7px 0 0;
 
 		&:first-child {
 			margin-top: 1.5ch;
 		}
 
 		&::before {
+			color: pink;
 			content: '> ';
 			font-weight: bold;
-			color: pink;
 		}
 	}
 }
